@@ -7,7 +7,7 @@ Utilities for working in Scala with type-parameterized histograms and frequency 
 
 [Release notes](releases.md)
 
-API docs for version 1.2.0 are [available online](https://neelsmith.github.io/histoutils/api/edu/holycross/shot/histoutils/index.html).
+API docs for version 1.3.0 are [available online](https://neelsmith.github.io/histoutils/api/edu/holycross/shot/histoutils/index.html).
 
 
 ## License
