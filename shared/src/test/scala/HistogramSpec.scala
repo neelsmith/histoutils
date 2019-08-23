@@ -105,4 +105,16 @@ class HistogramSpec extends FlatSpec {
     assert(histo.percentForCount(5) == 80)
   }
 
+  it should "export to CEX" in {
+    val freqs = Vector(
+      Frequency("a", 1),
+      Frequency("b", 2),
+      Frequency("c", 3)
+    )
+    val histo: Histogram[String] = Histogram(freqs)
+
+    val expected = "c#3\nb#2\na#1"
+    assert(histo.cex() == expected)
+  }
+
 }

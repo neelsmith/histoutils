@@ -36,5 +36,12 @@ class FrequencySpec extends FlatSpec {
    }
  }
 
+ it should "export CEX" in {
+   val item : String = "word"
+   val count = 5
+   val freq = Frequency(item, 5)
+   assert(freq.cex() == "word#5")
+ }
+
 
 }

@@ -90,4 +90,8 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
     percent(frequencyList.map(_.count).sum)
   }
 
+  def cex(delimiter: String = "#") : String = {
+    sorted.map(_.cex(delimiter)).mkString("\n")
+  }
+
 }
