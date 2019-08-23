@@ -135,12 +135,12 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu.holycross.shot">shot</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="Frequency.html" title=""></a>
-                        <a href="Frequency.html" title="">Frequency</a>
+                        <a class="class" href="Frequency.html" title="Generic class for working with frequency counts of an item."></a>
+                        <a href="Frequency.html" title="Generic class for working with frequency counts of an item.">Frequency</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="" title=""></a>
-                        <a href="" title="">Histogram</a>
+                        <a class="class" href="" title="Generic class for working with frequency counts of items of a given type T."></a>
+                        <a href="" title="Generic class for working with frequency counts of items of a given type T.">Histogram</a>
                       </li>
               </ul>
             </div>
@@ -169,7 +169,9 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Generic class for working with frequency counts of items
+of a given type T.
+</p></div><dl class="paramcmts block"><dt class="param">frequencies</dt><dd class="cmt"><p>Vector of <a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a> counts.</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -219,7 +221,7 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="edu.holycross.shot.histoutils.Histogram#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="edu.holycross.shot.histoutils.Histogram#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;init&gt;(frequencies:Vector[edu.holycross.shot.histoutils.Frequency[T]]):edu.holycross.shot.histoutils.Histogram[T]"></a><a id="&lt;init&gt;:Histogram[T]"></a>
       <span class="permalink">
       <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#&lt;init&gt;(frequencies:Vector[edu.holycross.shot.histoutils.Frequency[T]]):edu.holycross.shot.histoutils.Histogram[T]" title="Permalink">
@@ -234,7 +236,7 @@
         <span class="name">Histogram</span><span class="params">(<span name="frequencies">frequencies: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>)</span>
       </span>
       
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">frequencies</dt><dd class="cmt"><p>Vector of <a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a> counts.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -476,10 +478,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="edu.holycross.shot.histoutils.Histogram#sorted" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sorted:scala.collection.immutable.Vector[edu.holycross.shot.histoutils.Frequency[T]]"></a><a id="sorted:Vector[Frequency[T]]"></a>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#percent" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="percent(n:Int):Int"></a><a id="percent(Int):Int"></a>
       <span class="permalink">
-      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#sorted:scala.collection.immutable.Vector[edu.holycross.shot.histoutils.Frequency[T]]" title="Permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#percent(n:Int):Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -488,10 +490,69 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sorted</span><span class="result">: <span class="extype" name="scala.collection.immutable.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
+        <span class="name">percent</span><span class="params">(<span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       
+      <p class="shortcomment cmt">Compute percent of total entries.</p><div class="fullcomment"><div class="comment cmt"><p>Compute percent of total entries.  Crudely
+round down to Int value, e.g., percent(2) out
+of a total of 3 == 66, not 67.
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>What percent of the total in this histogram
+does the count n represent?</p></dd></dl></div>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#percentForItem" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="percentForItem[T](item:T):Int"></a><a id="percentForItem[T](T):Int"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#percentForItem[T](item:T):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">percentForItem</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="item">item: <span class="extype" name="edu.holycross.shot.histoutils.Histogram.percentForItem.T">T</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
       
+      <p class="shortcomment cmt">Compute what percent of the histogram the total values up to
+a given item's value represents.</p><div class="fullcomment"><div class="comment cmt"><p>Compute what percent of the histogram the total values up to
+a given item's value represents.  E.g., if for four entries
+with counts  4,3,2,1, the percent for subtotal at 3 is 70%
+(subtotal of 7 out of total of 10). Note that if multiple items
+have the same count as the requesteditem, their counts are included:
+we want the percent for all items with this count value.
+</p></div><dl class="paramcmts block"><dt class="param">item</dt><dd class="cmt"><p>What percent of the histogram does</p></dd></dl></div>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#size" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="size:Int"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#size:Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Number of entries in the histogram.</p>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#sorted" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]"></a><a id="sorted:Vector[Frequency[T]]"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sorted</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Sort frequencies by count, descending.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -508,6 +569,43 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#takePercent" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="takePercent(threshhold:Int,runningTotal:Int,source:Vector[edu.holycross.shot.histoutils.Frequency[T]],entries:Vector[edu.holycross.shot.histoutils.Frequency[T]]):Vector[edu.holycross.shot.histoutils.Frequency[T]]"></a><a id="takePercent(Int,Int,Vector[Frequency[T]],Vector[Frequency[T]]):Vector[Frequency[T]]"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#takePercent(threshhold:Int,runningTotal:Int,source:Vector[edu.holycross.shot.histoutils.Frequency[T]],entries:Vector[edu.holycross.shot.histoutils.Frequency[T]]):Vector[edu.holycross.shot.histoutils.Frequency[T]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">takePercent</span><span class="params">(<span name="threshhold">threshhold: <span class="extype" name="scala.Int">Int</span></span>, <span name="runningTotal">runningTotal: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="source">source: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol"><span class="name"><a href="#sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]">sorted</a></span></span></span>, <span name="entries">entries: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol">Vector.empty[Frequency[T]]</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Return minimum number of frequencies with counts summing
+up to or beyond a percent threshhold by recursively extracting
+top entry and inspecting running total.</p><div class="fullcomment"><div class="comment cmt"><p>Return minimum number of frequencies with counts summing
+up to or beyond a percent threshhold by recursively extracting
+top entry and inspecting running total.
+</p></div><dl class="paramcmts block"><dt class="param">threshhold</dt><dd class="cmt"><p>Percent of totals to extract.</p></dd><dt class="param">runningTotal</dt><dd class="cmt"><p>Total of counts seen so far.</p></dd><dt class="param">source</dt><dd class="cmt"><p>Vector of <a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>s remaining to consider.</p></dd><dt class="param">entries</dt><dd class="cmt"><p>Vector of <a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>s extracted so far.</p></dd></dl></div>
+    </li><li name="edu.holycross.shot.histoutils.Histogram#total" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="total:Int"></a>
+      <span class="permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#total:Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">total</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Total of all count values.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
