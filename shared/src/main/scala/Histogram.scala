@@ -74,11 +74,20 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
         val totals = frequencies.filter(_.count >= frequency(0).count).map(_.count).sum
         percent(totals)
       }
-      
+
       case 0 => throw new Exception("Histogram: no entry for item " + item)
       case _ => throw new Exception("Somehow found more than one entry for " + item)
     }
+  }
 
+  /** Compute what percent of the histogram the total values up
+  * a given count constitute.
+  *
+  * @param count Threshhold count to include.
+  */
+  def percentForCount(count: Int) = {
+    val frequencyList = frequencies.filter(_.count >= count)
+    percent(frequencyList.map(_.count).sum)
   }
 
 }

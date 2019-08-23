@@ -85,4 +85,24 @@ class HistogramSpec extends FlatSpec {
     assert(histo.percentForItem("e") == 80)
   }
 
+  it should "compute what percent of the histogram a given value represents" in {
+    val freqs = Vector(
+      Frequency("a", 1),
+      Frequency("b", 2),
+      Frequency("c", 3),
+      Frequency("d", 4),
+      Frequency("e", 5),
+      Frequency("ebis", 5),
+      Frequency("f", 6),
+      Frequency("g", 7),
+      Frequency("h", 8),
+      Frequency("i", 9)
+    )
+    val histo: Histogram[String] = Histogram(freqs)
+
+    assert(histo.total == 50)
+    assert(histo.size == 10)
+    assert(histo.percentForCount(5) == 80)
+  }
+
 }
