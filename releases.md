@@ -1,5 +1,8 @@
 # Release notes
 
+
+**1.4.0**:  Add `fromCex` function on `Histogram` object.
+
 **1.3.0**: Add `cex` functions on `Frequency` and `Histogram`.
 
 **1.2.0**: Add `percentForCount` function to `Histogram`.
