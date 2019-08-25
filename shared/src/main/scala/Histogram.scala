@@ -95,3 +95,30 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
   }
 
 }
+
+object Histogram {
+
+
+  /** Read two-column string giving value and count, and return
+  * a Histogram.
+  *
+  * @param cex String serialization of a Histogram as item#count.
+  * @param delimiter String value delimiting item from count.
+  */
+  def fromCex(cex: String, delimiter: String = "#") : Histogram[String] = {
+    val freqs : Vector[Frequency[String]] = cex.split("\n").toVector.map( row => {
+      val cols = row.split(delimiter)
+      if (cols.size != 2){
+        throw new Exception("Histogram fromCex:  bad input line " + row)
+      } else {
+        try {
+          Frequency(cols(0), cols(1).toInt)
+        } catch {
+          case t: Throwable =>   throw new Exception("Histogram fromCex:  bad input line " + row + ".  " + t)
+        }
+
+      }
+    })
+    Histogram(freqs)
+  }
+}
