@@ -561,9 +561,9 @@ we want the percent for all items with this count value.
       
       <p class="shortcomment cmt">Number of entries in the histogram.</p>
     </li><li name="edu.holycross.shot.histoutils.Histogram#sorted" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]"></a><a id="sorted:Vector[Frequency[T]]"></a>
+      <a id="sorted:edu.holycross.shot.histoutils.Histogram[T]"></a><a id="sorted:Histogram[T]"></a>
       <span class="permalink">
-      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]" title="Permalink">
+      <a href="../../../../edu/holycross/shot/histoutils/Histogram.html#sorted:edu.holycross.shot.histoutils.Histogram[T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -572,10 +572,10 @@ we want the percent for all items with this count value.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sorted</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
+        <span class="name">sorted</span><span class="result">: <a href="" class="extype" name="edu.holycross.shot.histoutils.Histogram">Histogram</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Sort frequencies by count, descending.</p>
+      <p class="shortcomment cmt">New histogram with frequencies sorted by count, descending.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -604,7 +604,7 @@ we want the percent for all items with this count value.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">takePercent</span><span class="params">(<span name="threshhold">threshhold: <span class="extype" name="scala.Int">Int</span></span>, <span name="runningTotal">runningTotal: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="source">source: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol"><span class="name"><a href="#sorted:Vector[edu.holycross.shot.histoutils.Frequency[T]]">sorted</a></span></span></span>, <span name="entries">entries: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol">Vector.empty[Frequency[T]]</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
+        <span class="name">takePercent</span><span class="params">(<span name="threshhold">threshhold: <span class="extype" name="scala.Int">Int</span></span>, <span name="runningTotal">runningTotal: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="source">source: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol"><span class="name"><a href="#sorted:edu.holycross.shot.histoutils.Histogram[T]">sorted.frequencies</a></span></span></span>, <span name="entries">entries: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]] = <span class="symbol">Vector.empty[Frequency[T]]</span></span>)</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<a href="Frequency.html" class="extype" name="edu.holycross.shot.histoutils.Frequency">Frequency</a>[<span class="extype" name="edu.holycross.shot.histoutils.Histogram.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Return minimum number of frequencies with counts summing
