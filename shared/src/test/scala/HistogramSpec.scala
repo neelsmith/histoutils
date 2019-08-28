@@ -117,4 +117,28 @@ class HistogramSpec extends FlatSpec {
     assert(histo.cex() == expected)
   }
 
+  it should "require unique item values in frequencies" in {
+    val freqs = Vector(
+      Frequency("a", 1),
+      Frequency("a", 2),
+      Frequency("c", 3)
+    )
+    try {
+      val histo: Histogram[String] = Histogram(freqs)
+    } catch {
+      case iae: IllegalArgumentException => assert(iae.toString.contains("Histogram had multiple frequency counts for the same key"))
+      case t : Throwable => fail("Should have thrown IllegalArgumentException")
+    }
+  }
+
+  it should "find the count for an item" in {
+    val freqs = Vector(
+      Frequency("a", 1),
+      Frequency("b", 2),
+      Frequency("c", 3)
+    )
+    val histo: Histogram[String] = Histogram(freqs)
+    assert(histo.countForItem("c") == 3)
+  }
+
 }

@@ -7,6 +7,10 @@ package edu.holycross.shot.histoutils
 * @param frequencies Vector of [[Frequency]] counts.
 */
 case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
+  def uniqueKeys: Boolean = {
+    frequencies.map(_.item).distinct == frequencies.map(_.item)
+  }
+  require (uniqueKeys, "Histogram had multiple frequency counts for the same key.")
 
   /** New histogram with frequencies sorted by count, descending.*/
   def sorted : Histogram[T]= Histogram(frequencies.sortWith(_.count > _.count))
@@ -57,6 +61,16 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
     }
   }
 
+  def countForItem[T](item: T): Int = {
+    val frequency = frequencies.filter(_.item == item)
+    frequency.size match {
+      case 1 => {
+        frequency(0).count
+      }
+
+      case 0 => 0
+    }
+  }
 
   /** Compute what percent of the histogram the total values up to
   * a given item's value represents.  E.g., if for four entries
