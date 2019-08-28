@@ -1,5 +1,6 @@
 # Release notes
 
+**2.0.0**: Changes API so that `Histogram[T].sorted` now returns a new `Histogram[T]`, not a `Vector[Frequencies[T]]`.
 
 **1.4.0**:  Add `fromCex` function on `Histogram` object.
 

@@ -8,8 +8,8 @@ package edu.holycross.shot.histoutils
 */
 case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
 
-  /** Sort frequencies by count, descending.*/
-  def sorted : Vector[Frequency[T]]= frequencies.sortWith(_.count > _.count)
+  /** New histogram with frequencies sorted by count, descending.*/
+  def sorted : Histogram[T]= Histogram(frequencies.sortWith(_.count > _.count))
 
   /** Number of entries in the histogram.*/
   def size : Int = frequencies.size
@@ -40,7 +40,7 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
   def takePercent(
     threshhold: Int,
     runningTotal : Int = 0,
-    source:  Vector[Frequency[T]]= sorted,
+    source:  Vector[Frequency[T]]= sorted.frequencies,
     entries:  Vector[Frequency[T]] = Vector.empty[Frequency[T]]
   ): Vector[Frequency[T]] = {
     val currentTotal = runningTotal + source.head.count
@@ -91,7 +91,7 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
   }
 
   def cex(delimiter: String = "#") : String = {
-    sorted.map(_.cex(delimiter)).mkString("\n")
+    sorted.frequencies.map(_.cex(delimiter)).mkString("\n")
   }
 
 }

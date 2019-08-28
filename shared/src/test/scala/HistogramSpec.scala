@@ -15,7 +15,7 @@ class HistogramSpec extends FlatSpec {
    val histo: Histogram[String] = Histogram(freqs)
 
    val expectedStrings = Vector("c", "b", "a")
-   assert(histo.sorted.map(_.item) == expectedStrings)
+   assert(histo.sorted.frequencies.map(_.item) == expectedStrings)
  }
 
  it should "indicate number of entries in the histogram" in {
