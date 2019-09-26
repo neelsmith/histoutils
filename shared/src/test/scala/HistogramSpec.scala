@@ -140,5 +140,27 @@ class HistogramSpec extends FlatSpec {
     val histo: Histogram[String] = Histogram(freqs)
     assert(histo.countForItem("c") == 3)
   }
+  it should "be able to add a second histogram" in {
+    val freqs1 =   Vector(
+      Frequency("a", 1),
+      Frequency("b", 2),
+      Frequency("c", 3)
+    )
+    val h1 : Histogram[String] = Histogram(freqs1)
+
+    val freqs2 =  Vector(
+      Frequency("b", 2),
+      Frequency("c", 1),
+      Frequency("d", 5)
+    )
+    val h2 : Histogram[String] = Histogram(freqs2)
+
+    val combo = h1 ++ h2
+    val expected = Histogram(Vector(Frequency("a",1), Frequency("b",4), Frequency("c",4), Frequency("d",5)))
+
+    assert(combo == expected)
+
+
+  }
 
 }

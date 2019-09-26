@@ -108,6 +108,17 @@ case class Histogram[T] (frequencies: Vector[Frequency[T]])  {
     sorted.frequencies.map(_.cex(delimiter)).mkString("\n")
   }
 
+
+  def ++ (h2: Histogram[T]): Histogram[T] = {
+    val itemSet = frequencies.map(_.item).toSet union h2.frequencies.map(_.item).toSet
+
+    val freqs = for (item <- itemSet) yield {
+      val totalCount = countForItem(item) + h2.countForItem(item)
+      Frequency(item, totalCount)
+    }
+    Histogram(freqs.toVector)
+  }
+
 }
 
 object Histogram {
