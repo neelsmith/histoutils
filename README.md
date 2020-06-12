@@ -3,7 +3,7 @@
 Utilities for working in Scala with type-parameterized histograms and frequency counts.
 
 
-## Current version: 2.2.0
+## Current version: 2.3.0
 
 [Release notes](releases.md)
 
