@@ -35,15 +35,15 @@ lazy val crossed = crossProject(JSPlatform, JVMPlatform).in(file(".")).
       scalaJSUseMainModuleInitializer := true,
     )
 
-        lazy val docs = project       // new documentation project
-          .in(file("docs-build")) // important: it must not be docs/
-          .dependsOn(crossed.jvm)
-          .enablePlugins(MdocPlugin)
-          .settings(
-            mdocIn := file("guide"),
-            mdocOut := file("docs"),
-            mdocExtraArguments := Seq("--no-link-hygiene"),
-            mdocVariables := Map(
-              "VERSION" -> "12.2.2"
-            )
-          )
+  lazy val docs = project       // new documentation project
+    .in(file("docs-build")) // important: it must not be docs/
+    .dependsOn(crossed.jvm)
+    .enablePlugins(MdocPlugin)
+    .settings(
+      mdocIn := file("guide"),
+      mdocOut := file("docs"),
+      mdocExtraArguments := Seq("--no-link-hygiene"),
+      mdocVariables := Map(
+        "VERSION" -> "12.2.2"
+      )
+    )
