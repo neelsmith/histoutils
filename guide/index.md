@@ -6,3 +6,4 @@ layout: page
 
 - the `Frequency` class
 - the `Histogram` class
+- 
