@@ -26,7 +26,7 @@ val that = Frequency("that", 13)
 val the =  Frequency("the", 11)
 val frequencies = Vector(that, the)
 ```
-```scala mdoc:silent
+```scala mdoc
 val histogram = Histogram(frequencies)
 ```
 

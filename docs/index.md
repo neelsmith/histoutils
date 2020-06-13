@@ -29,6 +29,9 @@ val frequencies = Vector(that, the)
 ```
 ```scala
 val histogram = Histogram(frequencies)
+// histogram: Histogram[String] = Histogram(
+//   Vector(Frequency("that", 13), Frequency("the", 11))
+// )
 ```
 
 `histogram` is a container for `String`-type `Frequency`s.
