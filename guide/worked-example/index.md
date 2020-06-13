@@ -59,7 +59,7 @@ Notice that this time the result is a `Histogram` of `Int` items.
 ## Using a `Histogram`
 
 
-How many entries are there in the histogram?
+How many items are in the histogram?
 
 ```scala mdoc
 iliadWordsHisto.size
@@ -72,7 +72,7 @@ What is the total number of occurrences?
 iliadWordsHisto.total
 ```
 
-Find occurrences for a value.  How many lines have 5 words?
+Find occurrences for a particular item.  How many lines have 5 words?
 
 ```scala mdoc
 iliadWordsHisto.countForItem(5)
