@@ -10,7 +10,7 @@ This example will construct a `Histogram` from a data set counting the number of
 
 
 
-Here's what our data set looks like:
+The data set we'll start from  looks like:
 
 ```scala
 groupedWordCounts
@@ -30,6 +30,7 @@ groupedWordCounts
 // )
 ```
 
+Note that it's a Vector of pairings of an `Int` (number of words in the line) with a second `Int` (number of lines with this many words).
 
 ## Constructing a `Histogram` object
 
