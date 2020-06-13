@@ -86,3 +86,5 @@ val iliadWordsHisto = Histogram(freqs)
 
 Notice that this time the result is a `Histogram` of `Int` items.
 
+
+## Using a `Histogram`
