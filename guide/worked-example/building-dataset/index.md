@@ -48,4 +48,4 @@ val groupedWordCounts = iliadWordsPerLine.
    map{ case (count, occurrences) => (count, occurrences.size)}
 ```
 
-That's exactly what we want to create a `Histogram`~
+That's exactly what we want to create a `Histogram`!

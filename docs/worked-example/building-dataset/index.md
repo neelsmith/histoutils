@@ -65,4 +65,4 @@ val groupedWordCounts = iliadWordsPerLine.
 // )
 ```
 
-That's exactly what we want to create a `Histogram`~
+That's exactly what we want to create a `Histogram`!
