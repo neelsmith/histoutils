@@ -1,5 +1,5 @@
 ---
-title: A worked exmaple
+title: A worked example
 layout: page
 ---
 
@@ -88,3 +88,77 @@ Notice that this time the result is a `Histogram` of `Int` items.
 
 
 ## Using a `Histogram`
+
+
+How many entries are there in the histogram?
+
+```scala
+iliadWordsHisto.size
+// res1: Int = 12
+```
+
+
+What is the total number of occurrences?
+
+```scala
+iliadWordsHisto.total
+// res2: Int = 15639
+```
+
+Find occurrences for a value.  How many lines have 5 words?
+
+```scala
+iliadWordsHisto.countForItem(5)
+// res3: Int = 1194
+```
+
+Select the minimum number of entries that make up a given percent of the total. What entries get us to the Pareto distribution of 80%?
+
+```scala
+iliadWordsHisto.takePercent(80)
+// res4: Vector[Frequency[Int]] = Vector(
+//   Frequency(7, 4810),
+//   Frequency(6, 3556),
+//   Frequency(8, 3411),
+//   Frequency(9, 1652)
+// )
+```
+
+
+Find percent of the entries with a count equal or greater than the count for a specified item.  How many lines have 5 or more words?
+
+```scala
+iliadWordsHisto.percentForItem(5)
+// res5: Int = 93
+```
+
+
+Find percent of the entries with a count equal or greater than a specified count.  How many line sizes occur 2000 or more times?
+
+
+```scala
+iliadWordsHisto.percentForCount(2000)
+// res6: Int = 75
+```
+
+Sort the histogram by frequency, descending.
+
+```scala
+iliadWordsHisto.sorted
+// res7: Histogram[Int] = Histogram(
+//   Vector(
+//     Frequency(7, 4810),
+//     Frequency(6, 3556),
+//     Frequency(8, 3411),
+//     Frequency(9, 1652),
+//     Frequency(5, 1194),
+//     Frequency(10, 536),
+//     Frequency(4, 269),
+//     Frequency(11, 114),
+//     Frequency(1, 31),
+//     Frequency(2, 27),
+//     Frequency(3, 24),
+//     Frequency(12, 15)
+//   )
+// )
+```

@@ -1,5 +1,5 @@
 ---
-title: A worked exmaple
+title: A worked example
 layout: page
 ---
 
@@ -56,3 +56,50 @@ Notice that this time the result is a `Histogram` of `Int` items.
 
 
 ## Using a `Histogram`
+
+
+How many entries are there in the histogram?
+
+```scala mdoc
+iliadWordsHisto.size
+```
+
+
+What is the total number of occurrences?
+
+```scala mdoc
+iliadWordsHisto.total
+```
+
+Find occurrences for a value.  How many lines have 5 words?
+
+```scala mdoc
+iliadWordsHisto.countForItem(5)
+```
+
+Select the minimum number of entries that make up a given percent of the total. What entries get us to the Pareto distribution of 80%?
+
+```scala mdoc
+iliadWordsHisto.takePercent(80)
+```
+
+
+Find percent of the entries with a count equal or greater than the count for a specified item.  How many lines have 5 or more words?
+
+```scala mdoc
+iliadWordsHisto.percentForItem(5)
+```
+
+
+Find percent of the entries with a count equal or greater than a specified count.  How many line sizes occur 2000 or more times?
+
+
+```scala mdoc
+iliadWordsHisto.percentForCount(2000)
+```
+
+Sort the histogram by frequency, descending.
+
+```scala mdoc
+iliadWordsHisto.sorted
+```
